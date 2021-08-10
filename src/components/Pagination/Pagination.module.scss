@@ -1,0 +1,67 @@
+@import '../../scss/variables';
+@import '../../scss/mixins';
+
+.wrap {
+  display: grid;
+  grid-template-rows: 190px auto auto auto;
+  grid-template-columns: repeat(1, auto);
+  align-items: center;
+  width: 220px;
+  height: 304px;
+  border: 1px solid $border-card;
+  padding: 16px 14px 20px 14px;
+}
+
+.img {
+  max-height: 100%;
+  margin: 0 auto;
+}
+
+.stars {
+  @include flex-row(flex-start, center);
+  column-gap: 4px;
+}
+
+.popularity {
+  @include font-regular-10;
+  color: $border-checkbox;
+}
+
+.text,
+.buttons {
+  @include flex-row(space-between, center);
+  width: 100%;
+}
+
+.text {
+  letter-spacing: 0.05em;
+}
+
+.detailsButton {
+  @include flex-row(center, center);
+  @include button-gray;
+  @include font-bold-12;
+  width: 89px;
+  height: 23px;
+}
+
+.buyButton {
+  @include flex-row(center, center);
+  @include button-yellow;
+  @include font-bold-12;
+  position: relative;
+  width: 87px;
+  height: 23px;
+  padding-left: 25px;
+
+  &::before {
+    @include pseudo;
+    top: 50%;
+    left: 11px;
+    width: 11px;
+    height: 11px;
+    background-image: url('../../img/cart.svg');
+    background-repeat: no-repeat;
+    transform: translateY(-50%);
+  }
+}

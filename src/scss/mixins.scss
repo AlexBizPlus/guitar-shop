@@ -1,0 +1,163 @@
+@import 'variables';
+
+@mixin base-font($weight: 400) {
+  font-family: 'DroidSans', 'Arial', sans-serif;
+  font-weight: $weight;
+}
+
+@mixin flex-column($main-axis, $second-axis) {
+  display: flex;
+  flex-direction: column;
+  justify-content: $main-axis;
+  align-items: $second-axis;
+}
+
+@mixin flex-row($main-axis, $second-axis) {
+  display: flex;
+  flex-direction: row;
+  justify-content: $main-axis;
+  align-items: $second-axis;
+}
+
+@mixin list-reset {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@mixin pseudo {
+  content: '';
+  position: absolute;
+}
+
+@mixin visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+@mixin button-white {
+  color: $border;
+  background: transparent;
+  border-radius: 2px;
+  border: 2px solid $border;
+  outline: none;
+  transition: all 0.2s ease-out;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &:focus,
+  &:active {
+    opacity: 0.5;
+  }
+}
+
+@mixin button-gray {
+  color: $white;
+  background: $button-gray;
+  border-radius: 2px;
+  border: none;
+  outline: none;
+  transition: all 0.2s ease-out;
+  cursor: pointer;
+
+  &:hover {
+    background: $border;
+  }
+
+  &:focus,
+  &:active {
+    background: $border-checkbox;
+  }
+}
+
+@mixin button-yellow {
+  color: $white;
+  background: $yellow;
+  border-radius: 2px;
+  border: none;
+  outline: none;
+  transition: all 0.2s ease-out;
+  cursor: pointer;
+
+  &:hover {
+    background: $yellow-light;
+  }
+
+  &:focus,
+  &:active {
+    background: $yellow-dark;
+  }
+}
+
+@mixin font-h1 {
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 26px;
+}
+
+@mixin font-h2 {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 21px;
+}
+
+@mixin font-regular-16 {
+  font-size: 16px;
+  line-height: 20px;
+}
+
+@mixin font-regular-14 {
+  font-size: 14px;
+  line-height: 15px;
+}
+
+@mixin font-regular-12 {
+  font-size: 12px;
+  line-height: 15px;
+}
+
+@mixin font-regular-10 {
+  font-size: 10px;
+  line-height: 12px;
+}
+
+@mixin font-bold-20 {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 20px;
+}
+
+@mixin font-bold-18 {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 20px;
+}
+
+@mixin font-bold-16 {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+@mixin font-bold-15 {
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 18px;
+}
+
+@mixin font-bold-12 {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 14px;
+}

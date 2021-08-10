@@ -1,0 +1,66 @@
+@import '../../scss/variables';
+@import '../../scss/mixins';
+
+.headerWrap {
+  @include flex-column(flex-start, center);
+  width: 100%;
+  min-width: $desktop;
+  min-height: 360px;
+}
+
+.headerBackground {
+  @include flex-row(center, center);
+  width: 100%;
+  padding: 0 40px;
+  background-color: $background;
+}
+
+.header {
+  @include flex-row(space-between, center);
+  position: relative;
+  width: 100%;
+  max-width: $max-desktop;
+  min-height: 110px;
+}
+
+.nav {
+  @include flex-row(center, center);
+  @include font-regular-14;
+  padding: 0 20px;
+  column-gap: 40px;
+}
+
+.selected {
+  border-bottom: 1px solid $black;
+}
+
+.iconsList {
+  @include list-reset;
+  @include flex-row(flex-end, center);
+  column-gap: 10px;
+}
+
+.icon {
+  @include flex-row(center, center);
+  width: 40px;
+  height: 40px;
+}
+
+.guitarImg {
+  position: absolute;
+  top: 78px;
+  right: 0;
+  max-width: 878px;
+  height: auto;
+}
+
+.stringsList {
+  width: 100%;
+}
+
+.string {
+  width: 100%;
+  height: 4px;
+  margin-top: 10px;
+  background-color: $dark;
+}

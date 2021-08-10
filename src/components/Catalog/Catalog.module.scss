@@ -1,0 +1,213 @@
+@import '../../scss/variables';
+@import '../../scss/mixins';
+
+.wrap {
+  @include flex-column(flex-start, center);
+  width: 100%;
+  min-width: $desktop;
+}
+
+.catalog {
+  @include flex-column(flex-start, flex-start);
+  width: 100%;
+  max-width: $max-desktop;
+  padding: 0 40px;
+}
+
+.header {
+  @include font-h1;
+  margin: 20px 0;
+}
+
+.arrow {
+  margin: 0 12px;
+}
+
+.filter {
+  display: grid;
+  grid-template-columns: 210px 1fr;
+  column-gap: 32px;
+  width: 100%;
+}
+
+.breadcrumbs {
+  margin-bottom: 40px;
+}
+
+.title {
+  @include font-h2;
+  margin: 0;
+  padding-bottom: 30px;
+}
+
+.legend {
+  @include flex-column(flex-start, stretch);
+}
+
+.line {
+  position: relative;
+
+  &::before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: $border-line;
+  }
+}
+
+.caption {
+  @include font-h2;
+  padding-top: 30px;
+  margin-bottom: 24px;
+}
+
+.currency {
+  @include font-bold-15;
+}
+
+.prices {
+  position: relative;
+  display: grid;
+  grid-template-columns: 84px 84px;
+  justify-content: space-between;
+  margin-bottom: 30px;
+
+  &::after {
+    @include pseudo;
+    top: 50%;
+    left: 50%;
+    width: 14px;
+    height: 1px;
+    background-color: $border;
+    transform: translateX(-50%);
+  }
+}
+
+input[type='number']::-webkit-textfield-decoration-container {
+  -webkit-appearance: none;
+}
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+.type {
+  @include flex-column(flex-start, flex-start);
+  row-gap: 12px;
+  padding-bottom: 33px;
+}
+
+.strings {
+  @include flex-column(flex-start, flex-start);
+  row-gap: 20px;
+  padding-bottom: 40px;
+}
+
+.checkbox {
+  font-size: 15px;
+  position: relative;
+  padding-left: 38px;
+  width: 100%;
+
+  &::before {
+    @include pseudo;
+    top: 50%;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    transform: translateY(-50%);
+    border: 1px solid $border-checkbox;
+    border-radius: 2px;
+  }
+}
+
+.checkboxInput {
+  @include visually-hidden;
+
+  &:checked + .checkbox::after {
+    @include pseudo;
+    top: 50%;
+    left: 0;
+    width: 12px;
+    height: 10px;
+    transform: translate(50%, -50%);
+    background-image: url('../../img/checked.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 12px 10px;
+  }
+
+  &:disabled + .checkbox {
+    & {
+      color: $color;
+    }
+
+    &::before {
+      border: 1px solid $border-gray;
+      background: $background-gray;
+    }
+
+    &::after {
+      display: none;
+    }
+  }
+}
+
+.submit {
+  @include font-bold-12;
+  @include button-gray;
+  text-transform: uppercase;
+  align-self: center;
+  padding: 8px 27px;
+}
+
+.sortSection {
+  width: 100%;
+}
+
+.sortWrap {
+  display: grid;
+  grid-template-columns: max-content 1fr max-content;
+  column-gap: 20px;
+  width: 100%;
+  padding-bottom: 30px;
+}
+
+.sort {
+  color: $border;
+}
+
+.sortInputsList {
+  @include flex-row(flex-start, center);
+  column-gap: 34px;
+}
+
+.sortInput {
+  @include visually-hidden;
+
+  &:checked + .sort {
+    color: $black;
+  }
+}
+
+.orderInputsList {
+  @include flex-row(flex-end, center);
+  column-gap: 24px;
+}
+
+.orderInput {
+  @include visually-hidden;
+
+  &:checked + label svg path {
+    fill: $black;
+  }
+}
+
+.rotate {
+  transform: rotate(180deg);
+}
