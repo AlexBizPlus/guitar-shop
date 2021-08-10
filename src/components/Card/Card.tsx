@@ -11,7 +11,8 @@ interface ICard {
 }
 
 const Card = ({ card }: ICard) => {
-  const { number, code, name, type, popularity, strings, price } = card;
+  const { name, type, popularity, price } = card;
+  // const { number, code, name, type, popularity, strings, price } = card;
 
   const guitarImg = () => {
     let srcImg;
